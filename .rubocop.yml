@@ -1,0 +1,31 @@
+Metrics/BlockLength:
+  Enabled: false
+
+Style/Documentation:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'spec/**/*'
+
+Style/StringLiterals:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+
+Style/PercentLiteralDelimiters:
+  Exclude:
+    - 'config/routes.rb'
+
+Layout/LineLength:
+  Exclude:
+    - 'config/initializers/content_security_policy.rb'
+
+AllCops:
+
+  NewCops: disable
+
+  Exclude:
+    - db/schema.rb
+    - Gemfile
+    - 'bin/**/*'
+    - 'config/**/*'
