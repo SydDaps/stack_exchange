@@ -11,6 +11,11 @@ class SearchController < ApplicationController
     render :index
   end
 
+  def error
+    flash[:error] = 'route not found'
+    redirect_to root_path
+  end
+
   private
 
   def query_param
