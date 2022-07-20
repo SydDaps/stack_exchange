@@ -2,10 +2,7 @@ Metrics/BlockLength:
   Enabled: false
 
 Style/Documentation:
-  Exclude:
-    - 'db/**/*'
-    - 'config/**/*'
-    - 'spec/**/*'
+  Enabled: false
 
 Style/StringLiterals:
   Exclude:
@@ -29,3 +26,6 @@ AllCops:
     - Gemfile
     - 'bin/**/*'
     - 'config/**/*'
+
+Lint/MissingSuper:
+  Enabled: false

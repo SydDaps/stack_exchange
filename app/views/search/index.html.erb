@@ -1,4 +1,4 @@
-<% if @results %>
+<% if @related_questions %>
   <div class="search-bar results">
 <% else %>
   <div class="search-bar home">
@@ -10,11 +10,25 @@
     </div>
 </div>
 
-<% if @results %>
-  <div class="ui left aligned container ">
-    <h3>Showing results for: <%= @results %></h3>
-  </div>
+<% if @related_questions %>
+  <div class="ui container center main-container">
 
+    <div class="ui left aligned container">
+      <div class="container-item">
+        <h3>Showing results for: <%= @query %></h3>
+      </div>
+    </div>
+
+
+    <% @related_questions.each do |question| %>
+      <div class="ui left aligned container">
+        <div class="container-item">
+          <p>Question: <a href="<%= question["link"] %>"><%= question["title"] %></a></p>
+          <p> &nbsp; Accepted answer: <%= question["answer_data"]["body"].html_safe %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% end %>
 
 <script>

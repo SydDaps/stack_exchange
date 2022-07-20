@@ -20,3 +20,17 @@
   padding: 20px 36px;
   box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
 }
+
+.divider, .container {
+  padding-top: 20px;
+  border-bottom: 1px solid #e7e9eb;
+}
+
+.container-item {
+  padding-left: 10px;
+}
+
+.main-container {
+  border-left: 1px solid #e7e9eb;
+  width: 80%;
+}
