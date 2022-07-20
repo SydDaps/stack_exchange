@@ -21,12 +21,18 @@
 
 
     <% @related_questions.each do |question| %>
+      <%answer = answer(question)%>
+      <% unless answer.empty? %>
       <div class="ui left aligned container">
         <div class="container-item">
           <p>Question: <a href="<%= question["link"] %>"><%= question["title"] %></a></p>
-          <p> &nbsp; Accepted answer: <%= question["answer_data"]["body"].html_safe %></p>
+
+          <div class="ui raised segment answer-seg">
+            <p>Accepted answer: <%= answer.first["body"].html_safe %></p>
+          </div>
         </div>
       </div>
+      <% end %>
     <% end %>
   </div>
 <% end %>
@@ -40,7 +46,7 @@
   })
 
   $('.button').click(function() {
-    window.location = `/search/{${value}}`
+    window.location = `/search/?query=${value}`
   });
 
   function addUtilityClasses(){

@@ -4,6 +4,7 @@ class SearchController < ApplicationController
   def index; end
 
   def process_query
+    @query = query_param[:query]
     related_questions(query_param)
     accepted_answers if @related_questions && @accepted_answer_ids
 
@@ -29,7 +30,7 @@ class SearchController < ApplicationController
   end
 
   def accepted_answers
-    response = Api::Answer.call({ ids: @accepted_answer_ids.join(';') })
+    response = Api::Answer.call({ ids: @accepted_answer_ids.join("\;") })
 
     if response.success?
       response = response.parsed_response

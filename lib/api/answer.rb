@@ -3,14 +3,13 @@
 module Api
   class Answer < Base
     def initialize(params)
-      @ids = params[:id]
+      @ids = params[:ids]
     end
 
     def call
-      url = "#{Api::Base::URL}/2.3/answers/"
+      url = "#{Api::Base::URL}/2.3/answers/#{@ids}"
       params = {
         site: 'stackoverflow',
-        ids: @ids,
         filter: 'withbody'
       }
 
