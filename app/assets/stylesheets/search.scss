@@ -38,3 +38,18 @@
 .answer-seg{
   margin: 20px !important;
 }
+
+pre code {
+  display: block;
+  background: none;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  max-width: 100%;
+  min-width: 100px;
+  padding: 0;
+}
+
+code {
+  background-color: antiquewhite !important;
+}
