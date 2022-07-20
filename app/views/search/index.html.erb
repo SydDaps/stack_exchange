@@ -1,0 +1,49 @@
+<% if @results %>
+  <div class="search-bar results">
+<% else %>
+  <div class="search-bar home">
+  <div class="home-header ui header">Ask all technical questions and get all accepted answers on StackOverflow in real time.</div>
+<% end %>
+    <div class="home-search ui action input">
+      <input type="text" placeholder="Search..." value="" name="query">
+      <button class="ui button search-btn">Search</button>
+    </div>
+</div>
+
+<% if @results %>
+  <div class="ui left aligned container ">
+    <h3>Showing results for: <%= @results %></h3>
+  </div>
+
+<% end %>
+
+<script>
+
+
+  let value = ""
+  $('input').on('input', function(){
+    value = $('input').val()
+  })
+
+  $('.button').click(function() {
+    window.location = `/search/{${value}}`
+  });
+
+  function addUtilityClasses(){
+    if($(window).width() > 617) {
+      $( ".home-search" ).addClass( "massive" );
+      $( ".home-header" ).addClass( "huge" );
+      let v = $('input').val()
+      console.log(v)
+    }
+    else {
+      $( ".home-search" ).removeClass( "massive" );
+      $( ".home-header" ).removeClass( "huge" );
+    }
+  }
+  $(document).ready(function(){
+    addUtilityClasses()
+  })
+
+  $(window).resize(addUtilityClasses);
+</script>

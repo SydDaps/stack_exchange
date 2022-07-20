@@ -11,6 +11,9 @@
   </head>
 
   <body>
+    <%= render 'layouts/flash' unless flash.empty? %>
     <%= yield %>
   </body>
 </html>
+
+
