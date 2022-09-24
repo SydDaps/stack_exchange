@@ -39,6 +39,9 @@ group :development, :test do
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
   gem 'rspec-rails', '~> 5.0.0'
+  gem 'bundler-audit'
+  gem 'brakeman'
+
 end
 
 
