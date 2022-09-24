@@ -12,7 +12,7 @@ class SearchController < ApplicationController
   end
 
   def error
-    flash[:error] = 'route not found'
+    flash[:error] = "route not found"
     redirect_to root_path
   end
 
